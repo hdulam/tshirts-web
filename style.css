@@ -53,13 +53,29 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
 }
 .logo {
-  font-family: var(--font-head);
-  font-size: 21px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  color: var(--navy);
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  display: flex; align-items: center; gap: 2px;
+}
+
+.logo img {
+  height: 36px;   /* desktop */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .logo img {
+    height: 32px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .logo img {
+    height: 28px;
+  }
 }
 .logo-dot { width: 8px; height: 8px; background: var(--amber); border-radius: 50%; margin-left: 3px; margin-bottom: 10px; }
 .nav-links { display: flex; gap: 32px; }
@@ -87,50 +103,66 @@ nav {
 
 /* ─── HERO / JUMBOTRON ─── */
 .hero {
-  background: var(--navy);
   position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 82vh;
-  padding: 100px 40px;
+
+  display: flex;
+  align-items: center;     /* vertical center */
+  justify-content: center; /* horizontal center */
+
   text-align: center;
+
+  padding: 120px 40px;
 }
 
-/* Decoración de fondo */
+/* Background image layer */
 .hero::before {
   content: '';
   position: absolute;
-  top: -120px; left: 50%;
-  transform: translateX(-50%);
-  width: 800px; height: 800px;
-  background: radial-gradient(circle, rgba(232,146,42,0.10) 0%, transparent 65%);
-  pointer-events: none;
+  inset: 0;
+
+  background: url('img/sfondo.jpg') center/cover no-repeat;
+
+  filter: blur(2px);
+  transform: scale(1); /* avoids blur edges */
+
+  z-index: 0;
 }
+
+/* Blue overlay */
 .hero::after {
   content: '';
   position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(232,146,42,0.3), transparent);
+  inset: 0;
+
+  background: rgba(13, 31, 56, 0.75); /* your navy */
+
+  z-index: 1;
 }
 
-/* Ocultar el lado derecho (placeholder imagen) */
-.hero-right { display: none; }
+/* Content stays above */
+.hero > * {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
 
 /* Lado izquierdo: ahora es el contenedor centrado */
 .hero-left {
-  padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;     /* center children horizontally */
   justify-content: center;
-  background: transparent;
-  position: relative;
-  z-index: 1;
+
+  text-align: center;
+
   max-width: 780px;
   width: 100%;
+  margin: 0 auto;          /* 👈 ensures centering */
+
+  position: relative;
+  z-index: 2;
 }
 
 .hero-tag {
@@ -271,7 +303,7 @@ nav {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  color: var(--gray-text);
+  color: black;
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -286,7 +318,7 @@ nav {
   font-family: var(--font-head);
   font-size: 13px;
   font-weight: 700;
-  color: rgba(13,31,56,0.2);
+  color: darkgray;
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
@@ -329,7 +361,7 @@ nav {
 
 .ind-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
@@ -498,6 +530,9 @@ nav {
   font-weight: 600;
   margin-left: 8px;
 }
+.form-info-icon i {
+  color: #fff;
+}
 
 /* ─── PROCESO ─── */
 .proceso-section {
@@ -507,7 +542,7 @@ nav {
 
 .steps {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 0;
   margin-top: 64px;
   position: relative;
@@ -560,7 +595,14 @@ nav {
   background: #fff;
   padding: 100px 80px;
 }
-
+.product-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+}
 .prod-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -909,6 +951,9 @@ footer {
   color: rgba(255,255,255,0.25);
   margin-bottom: 16px;
 }
+#reff{
+    color: rgba(255,255,255,0.25);
+}
 .footer-col a {
   display: block;
   font-size: 14px;
@@ -1183,3 +1228,41 @@ footer {
   .step-num { width: 40px; height: 40px; font-size: 14px; }
 }
 
+
+.card-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.card-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--navy);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+.card-features {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 18px;
+  font-size: 13px;
+  color: var(--gray-text);
+}
+
+.card-features li {
+  margin-bottom: 4px;
+}
