@@ -1,138 +1,506 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>TShirts Guatemala — Próximamente</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-
-:root{
-  --bg:#050b18;
-  --navy:#0d1b2a;
-  --soft:#12243d;
-  --white:#f8fbff;
-  --muted:#9fb3d1;
-}
-
-body{
-  height:100vh;
-  background: radial-gradient(circle at 50% 40%, #0f2547 0%, #050b18 70%);
-  font-family:'Inter',sans-serif;
-  color:var(--white);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
-
-/* subtle noise */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
-             linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
-  background-size:80px 80px;
-  opacity:.4;
-}
-
-.wrap{
-  text-align:center;
-  animation:fade 1s ease forwards;
-}
-
-@keyframes fade{
-  from{opacity:0;transform:translateY(20px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-.brand{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2.5rem,6vw,4rem);
-  letter-spacing:.05em;
-}
-
-.brand span{
-  display:block;
-  font-size:.9rem;
-  letter-spacing:.4em;
-  margin-top:.6rem;
-  color:var(--muted);
-  font-family:'Inter',sans-serif;
-}
-
-.line{
-  width:60px;
-  height:1px;
-  background:linear-gradient(90deg,transparent,var(--white),transparent);
-  margin:2rem auto;
-  opacity:.6;
-}
-
-.subtitle{
-  font-size:.85rem;
-  letter-spacing:.35em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
-
-.message{
-  margin-top:3rem;
-  font-family:'Playfair Display',serif;
-  font-style:italic;
-  font-size:1.2rem;
-  opacity:.7;
-}
-
-.footer{
-  margin-top:3rem;
-  font-size:.7rem;
-  letter-spacing:.25em;
-  text-transform:uppercase;
-  opacity:.6;
-}
-
-.footer span{
-  opacity:1;
-}
-
-/* elegant floating glow */
-.glow{
-  position:fixed;
-  width:400px;
-  height:400px;
-  background:radial-gradient(circle, rgba(80,140,255,.15), transparent 70%);
-  top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  filter:blur(60px);
-  z-index:-1;
-}
-
-</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TSHIRTS — Uniformes Profesionales Guatemala</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
-
 <body>
 
-<div class="glow"></div>
+<div class="topbar">
+  Respuesta en menos de <strong>24 horas</strong> · <a href="#cotizar">Solicita tu cotización gratis →</a>
+</div>
 
-<main class="wrap">
+<nav>
+  <a class="logo" href="#">
+  <img src="img/logo.png" alt="TShirts">
+</a>
+  <div class="nav-links">
+    <a href="#industrias">Industrias</a>
+    <a href="#proceso">Cómo funciona</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="#cotizar" class="nav-cta">Cotizar ahora</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-  <h1 class="brand">
-    TSHIRTS
-    <span>GUATEMALA</span>
-  </h1>
+<!-- Menú móvil -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#industrias" onclick="closeMobileMenu()">Industrias</a>
+  <a href="#proceso" onclick="closeMobileMenu()">Cómo funciona</a>
+  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+  <a href="#cotizar" class="mob-cta" onclick="closeMobileMenu()">Cotizar ahora</a>
+</div>
 
-  <div class="line"></div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Uniformes profesionales · Guatemala</div>
+    <h1>La imagen de tu<br>equipo habla antes<br>que <em>ellos</em></h1>
+    <p class="hero-sub">Elige el uniforme ideal desde nuestro catálogo profesional: <br> </br> Polos U-Grid, Wafit, Safari, Médico e Industrial listos para personalizar con tu marca.</p>
+    <div class="hero-btns">
+      <a href="#cotizar" class="btn-primary">Ver catálogo</a>
+    </div>
+    <div class="hero-proof">
+      <div class="hero-proof-item">
+        <span class="hero-proof-n">5+</span>
+        <span class="hero-proof-l">Años en el mercado</span>
+      </div>
+      <div class="hero-proof-divider"></div>
+      <div class="hero-proof-item">
+        <span class="hero-proof-n">200+</span>
+        <span class="hero-proof-l">Empresas atendidas</span>
+      </div>
+      <div class="hero-proof-divider"></div>
+      <div class="hero-proof-item">
+        <span class="hero-proof-n">100%</span>
+        <span class="hero-proof-l">Entregas puntuales</span>
+      </div>
+    </div>
+  </div>
 
-  <p class="message">Estamos construyendo algo grande.</p>
 
-  <div class="footer">Tech by <span>HDULAM</span></div>
+  <div class="hero-right">
+    <div class="hero-img-placeholder">
+      <img src="img/sfondo.jpg" alt="Uniformes" style="width:100%;height:100%;object-fit:cover;display:block;">
+    </div>
+  </div>
+</section>
 
-</main>
+<!-- TRUST
+<div class="trust-bar">
+  <span class="trust-label">Confían en nosotros</span>
+  <div class="trust-divider"></div>
+  <div class="trust-logos">
+    <span class="trust-logo-item">Clínica Santa Ana</span>
+    <span class="trust-logo-item">Grupo Industrial GT</span>
+    <span class="trust-logo-item">Hotel Las Cumbres</span>
+    <span class="trust-logo-item">Constructora Alfa</span>
+    <span class="trust-logo-item">Farmacias Del Pueblo</span>
+  </div>
+</div>-->
 
+<!-- INDUSTRIAS -->
+<section class="ind-section" id="catalogo">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Catálogo 2026</div>
+      <div class="section-title">Elige el uniforme ideal<br>para tu equipo</div>
+    </div>
+    <p class="section-sub">
+      Explora nuestros modelos listos para personalizar. Selecciona el estilo, conoce sus beneficios y cotiza fácilmente.
+    </p>
+  </div>
+
+  <div class="ind-grid">
+
+    <!-- U-GRID -->
+    <div class="ind-card">
+      <div class="card-img">
+        <img src="img/1.png" alt="Polo U-Grid">
+      </div>
+      <div class="ind-name">Polo U-Grid</div>
+      <div class="ind-desc">
+        Secado rápido, tela transpirable y estilo ejecutivo para equipos corporativos.
+      </div>
+      <ul class="card-features">
+        <li>✔ Gestión de humedad</li>
+        <li>✔ Textura premium</li>
+        <li>✔ Corte moderno</li>
+      </ul>
+      <a href="polo-ugrid/" class="ind-link">Ver modelo →</a>
+    </div>
+
+    <!-- WAFIT -->
+    <div class="ind-card">
+      <div class="card-img">
+        <img src="img/2.png" alt="Polo Wafit">
+      </div>
+      <div class="ind-name">Polo Wafit</div>
+      <div class="ind-desc">
+        Resistencia superior y fácil cuidado para uso diario intensivo.
+      </div>
+      <ul class="card-features">
+        <li>✔ Alta durabilidad</li>
+        <li>✔ Fácil planchado</li>
+        <li>✔ Comodidad prolongada</li>
+      </ul>
+      <a href="polo-wafit/" class="ind-link">Ver modelo →</a>
+    </div>
+
+    <!-- SAFARI -->
+    <div class="ind-card">
+      <div class="card-img">
+        <img src="img/3.png" alt="Uniforme Safari">
+      </div>
+      <div class="ind-name">Safari Ejecutivo</div>
+      <div class="ind-desc">
+        Diseño funcional con ventilación y bolsillos para trabajo dinámico.
+      </div>
+      <ul class="card-features">
+        <li>✔ Tela transpirable</li>
+        <li>✔ Múltiples bolsillos</li>
+        <li>✔ Secado rápido</li>
+      </ul>
+      <a href="safari/" class="ind-link">Ver modelo →</a>
+    </div>
+
+    <!-- MÉDICO -->
+    <div class="ind-card">
+      <div class="card-img">
+        <img src="img/5.png" alt="Uniforme Médico">
+      </div>
+      <div class="ind-name">Médico Antifluidos</div>
+      <div class="ind-desc">
+        Protección certificada y comodidad para largas jornadas clínicas.
+      </div>
+      <ul class="card-features">
+        <li>✔ Tela antifluidos</li>
+        <li>✔ Diseño ergonómico</li>
+        <li>✔ Alta durabilidad</li>
+      </ul>
+      <a href="medico/" class="ind-link">Ver modelo →</a>
+    </div>
+
+    <!-- INDUSTRIAL -->
+    <div class="ind-card">
+      <div class="card-img">
+        <img src="img/7.png" alt="Uniforme Industrial">
+      </div>
+      <div class="ind-name">Industrial Alta Visibilidad</div>
+      <div class="ind-desc">
+        Seguridad y resistencia para entornos exigentes de trabajo.
+      </div>
+      <ul class="card-features">
+        <li>✔ Cintas reflectivas</li>
+        <li>✔ Alta resistencia</li>
+        <li>✔ Uso rudo</li>
+      </ul>
+      <a href="industrial/" class="ind-link">Ver modelo →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- POR QUÉ -->
+<section class="why-section">
+  <div class="section-label">Por qué elegirnos</div>
+  <div class="section-title">No vendemos uniformes genéricos</div>
+  <div class="why-grid">
+    <div class="why-list">
+      <div class="why-item">
+        <span class="why-num">01</span>
+        <div class="why-body">
+          <strong>Diseño a tu medida</strong>
+          <span>Colores, logo, tela y corte adaptados a tu identidad. No trabajamos con moldes fijos.</span>
+        </div>
+      </div>
+      <div class="why-item">
+        <span class="why-num">02</span>
+        <div class="why-body">
+          <strong>Proceso simple y claro</strong>
+          <span>Cotizas, defines los detalles, producimos y entregamos. Sin complicaciones ni sorpresas.</span>
+        </div>
+      </div>
+      <div class="why-item">
+        <span class="why-num">03</span>
+        <div class="why-body">
+          <strong>Imagen consistente</strong>
+          <span>Tu equipo alineado y listo para representar tu marca profesionalmente en cada turno.</span>
+        </div>
+      </div>
+      <div class="why-item">
+        <span class="why-num">04</span>
+        <div class="why-body">
+          <strong>Asesoría sin costo</strong>
+          <span>Te guiamos en la elección de tela, técnica de personalización y estilo más adecuado.</span>
+        </div>
+      </div>
+    </div>
+    <div class="why-stats">
+      <div class="why-stats-title">Nuestros números</div>
+      <div class="why-stat">
+        <span class="wlabel">Años de experiencia</span>
+        <span class="wval">5+</span>
+      </div>
+      <div class="why-stat">
+        <span class="wlabel">Empresas atendidas</span>
+        <div><span class="wval">200+</span><span class="wbadge">y creciendo</span></div>
+      </div>
+      <div class="why-stat">
+        <span class="wlabel">Entregas a tiempo</span>
+        <span class="wval">100%</span>
+      </div>
+      <div class="why-stat">
+        <span class="wlabel">Tiempo de respuesta</span>
+        <span class="wval">&lt;24h</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="proceso-section" id="proceso">
+  <div class="section-label">Cómo funciona</div>
+  <div class="section-title">Cuatro pasos, cero complicaciones</div>
+  <p class="section-sub" style="font-size:15px;color:var(--gray-text);margin-top:12px;font-weight:300;line-height:1.75;max-width:480px;">Te acompañamos en todo el proceso para que tus uniformes lleguen exactamente como los necesitas.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-title">Solicitas cotización</div>
+      <div class="step-desc">Llena el formulario o escríbenos por WhatsApp con lo que necesitas.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-title">Te asesoramos</div>
+      <div class="step-desc">Definimos estilo, diseño, colores, logo y cantidades juntos.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-title">Tallaje</div>
+      <div class="step-desc">Nos aseguramos que se adapten a sus necesidades.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-title">Producción</div>
+      <div class="step-desc">Implementamos el bordado de tu empresa.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-title">Entrega puntual</div>
+      <div class="step-desc">Recibes tus uniformes en la fecha acordada, sin excepciones.</div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA -->
+<div class="mid-cta">
+  <div class="mid-cta-text">
+    <h2>¿Necesitas uniformes<br>para tu equipo?</h2>
+    <p>Te ayudamos a encontrar la mejor opción según tu presupuesto y uso. Sin compromiso.</p>
+  </div>
+  <a href="#cotizar" class="btn-white">Solicitar cotización</a>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-label">Preguntas frecuentes</div>
+  <div class="section-title">Resolvemos tus dudas</div>
+  <div class="faq-layout">
+    <div>
+      <p class="faq-intro-sub">Estas son las preguntas más comunes antes de cotizar. Si tienes alguna otra, escríbenos directamente.</p>
+      <a href="#cotizar" class="btn-primary" style="font-size:14px;padding:12px 26px;">Hablar con un asesor</a>
+    </div>
+    <div class="faq-list">
+      <div class="fq">
+        <div class="fq-q" onclick="toggleFQ(this)"><span>¿Trabajan desde pocas unidades?</span><span class="fq-icon">+</span></div>
+        <div class="fq-a">Sí, trabajamos pedidos de distintos tamaños. Cuéntanos tu cantidad aproximada y te asesoramos sobre las mejores opciones para tu presupuesto.</div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="toggleFQ(this)"><span>¿Pueden personalizar con mi logo?</span><span class="fq-icon">+</span></div>
+        <div class="fq-a">Por supuesto. Ofrecemos bordado, serigrafía y sublimación según el tipo de uniforme y tela. Te recomendamos la mejor técnica para tu diseño específico.</div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="toggleFQ(this)"><span>¿Cuánto tarda la entrega?</span><span class="fq-icon">+</span></div>
+        <div class="fq-a">El tiempo varía según el pedido. En tu cotización te damos una fecha exacta de entrega que cumplimos al pie de la letra.</div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="toggleFQ(this)"><span>¿Qué tipos de tela manejan?</span><span class="fq-icon">+</span></div>
+        <div class="fq-a">Trabajamos con algodón, poliéster, mezclas técnicas e industriales. La elección depende del uso, clima y nivel de exigencia que necesites.</div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="toggleFQ(this)"><span>¿Hacen envíos a todo el país?</span><span class="fq-icon">+</span></div>
+        <div class="fq-a">Sí, realizamos envíos. Consulta disponibilidad para tu ubicación al momento de cotizar y te confirmamos opciones y costos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section" id="cotizar">
+  <div class="section-label">Cotización gratuita</div>
+  <div class="section-title">Pide tu cotización hoy</div>
+  <p class="section-sub-hero">Te respondemos en menos de 24 horas con la mejor propuesta para tu equipo.</p>
+  <div class="form-layout">
+    <div class="form-info">
+      <div class="form-info-item">
+        <div class="form-info-icon"><i class="bi bi-lightning-charge"></i></div>
+        <div class="form-info-text">
+          <strong>Respuesta en menos de 24h</strong>
+          <span>Días hábiles, sin excepciones</span>
+        </div>
+      </div>
+      <div class="form-info-item">
+        <div class="form-info-icon"><i class="bi bi-palette"></i></div>
+        <div class="form-info-text">
+          <strong>Asesoría de diseño incluida</strong>
+          <span>Te guiamos en tela, colores y acabados</span>
+        </div>
+      </div>
+      <div class="form-info-item">
+        <div class="form-info-icon"><i class="bi bi-patch-check"></i></div>
+        <div class="form-info-text">
+          <strong>Sin compromiso</strong>
+          <span>Cotizamos gratis, tú decides si avanzas</span>
+        </div>
+      </div>
+      <div class="form-info-item">
+        <div class="form-info-icon"><i class="bi bi-box-seam"></i></div>
+        <div class="form-info-text">
+          <strong>Personalización completa</strong>
+          <span>Logo, colores, telas y tallas a tu medida</span>
+        </div>
+      </div>
+    </div>
+<form action="https://formsubmit.co/c20bba755dfee04db54af5c5d51a082b" method="POST">
+
+  <!-- Opciones ocultas -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="Nueva cotización desde la web">
+  <input type="hidden" name="_template" value="table">
+
+  <div class="form-box">
+
+    <div class="form-row">
+      <div class="field">
+        <label>Nombre</label>
+        <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+      </div>
+
+      <div class="field">
+        <label>Empresa</label>
+        <input type="text" name="empresa" placeholder="Nombre de tu empresa">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>WhatsApp</label>
+      <input type="tel" name="whatsapp" placeholder="+502 0000-0000" required>
+    </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label>Tipo de uniforme</label>
+        <select name="tipo_uniforme" required>
+          <option value="">Seleccionar...</option>
+          <option>Corporativo</option>
+          <option>Médico / Clínica</option>
+          <option>Industrial</option>
+          <option>Safari / Polo</option>
+          <option>Otro</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Cantidad aproximada</label>
+        <input type="number" name="cantidad" placeholder="Ej: 50 piezas">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Mensaje (opcional)</label>
+      <textarea name="mensaje" rows="3" placeholder="Cuéntanos más sobre tu proyecto..."></textarea>
+    </div>
+    <input type="hidden" name="_next" value="https://tshirts.com.gt/gracias">
+    <button type="submit" class="form-btn">
+      Quiero mi cotización
+    </button>
+
+    <p class="form-micro">
+      Rápido · Sin compromiso · Asesoría gratuita
+    </p>
+
+  </div>
+</form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">  <img src="img/logo.png" alt="TShirts"></div>
+      <p class="footer-desc">Uniformes profesionales para empresas que cuidan su imagen. Diseño, producción y entrega puntual en Guatemala.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Industrias</h4>
+      <a href="#industrias">Corporativo</a>
+      <a href="#industrias">Médico</a>
+      <a href="#industrias">Industrial</a>
+      <a href="#industrias">Safari / Polo</a>
+    </div>
+    <div class="footer-col">
+      <h4>Empresa</h4>
+      <a href="#proceso">Cómo funciona</a>
+      <a href="#faq">Preguntas frecuentes</a>
+      <a href="#cotizar">Cotizar uniformes</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <a href="#">WhatsApp</a>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 TSHIRTS · Todos los derechos reservados.</span>
+    <span style="color:rgba(255,255,255,0.12);">Guatemala, C.A.</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/50250173186" class="wa">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+});
+function closeMobileMenu() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// FAQ accordion
+function toggleFQ(btn) {
+  const fq = btn.closest('.fq');
+  const a = btn.nextElementSibling;
+  const icon = btn.querySelector('.fq-icon');
+  const open = a.classList.contains('open');
+  document.querySelectorAll('.fq-a').forEach(x => x.classList.remove('open'));
+  document.querySelectorAll('.fq-icon').forEach(x => x.textContent = '+');
+  document.querySelectorAll('.fq').forEach(x => x.classList.remove('open'));
+  if (!open) {
+    a.classList.add('open');
+    icon.textContent = '−';
+    fq.classList.add('open');
+  }
+}
+
+// Form submit
+function handleSubmit(btn) {
+  const orig = btn.innerHTML;
+  btn.innerHTML = '<i class="bi bi-check-lg"></i> ¡Cotización enviada!';
+  btn.style.background = '#2a7a55';
+  btn.style.boxShadow = '0 4px 20px rgba(42,122,85,0.35)';
+  setTimeout(() => {
+    btn.innerHTML = orig;
+    btn.style.background = '';
+    btn.style.boxShadow = '';
+  }, 3500);
+}
+</script>
 </body>
 </html>
